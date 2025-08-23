@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cinematic LinkedIn Post Template — Day 09</title>
+  <style>
+    :root{
+      --bg1: #0f1724;
+      --accent-1: #ff6b8a;
+      --accent-2: #00d1ff;
+      --gold: #ffd166;
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.03);
+      --card-w: 1000px;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;padding:40px;display:flex;align-items:center;justify-content:center;
+      background: radial-gradient(1200px 600px at 10% 20%, rgba(0,206,255,0.07), transparent),
+                  radial-gradient(1000px 600px at 90% 80%, rgba(255,107,138,0.06), transparent),
+                  var(--bg1);
+      font-family:var(--font-sans);color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+    }
+    body::after{
+      content:"";position:fixed;inset:0;pointer-events:none;
+      background-image:linear-gradient(transparent 96%, rgba(0,0,0,0.02) 100%);
+      mix-blend-mode:overlay;opacity:0.7
+    }
+    .post-card{
+      width:min(92vw, var(--card-w));
+      border-radius:20px;padding:28px;position:relative;overflow:hidden;
+      background:linear-gradient(135deg,var(--glass), rgba(255,255,255,0.02));
+      box-shadow: 0 20px 60px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(8px) saturate(120%);
+    }
+    .ribbon{
+      position:absolute;inset:auto -20% -40% auto;width:160%;height:160%;
+      transform:rotate(-12deg);filter:blur(30px);opacity:0.85;
+      background: linear-gradient(90deg, rgba(0,209,255,0.14), rgba(255,107,138,0.12) 35%, rgba(255,209,102,0.08));
+      animation: drift 10s linear infinite;
+      mix-blend-mode:screen;
+    }
+    @keyframes drift{
+      0%{transform:translateX(-5%) rotate(-12deg)}
+      50%{transform:translateX(5%) rotate(-12deg)}
+      100%{transform:translateX(-5%) rotate(-12deg)}
+    }
+    .top-row{display:flex;align-items:center;gap:18px}
+    .avatar{
+      width:72px;height:72px;border-radius:14px;flex:0 0 72px;
+      background:linear-gradient(180deg,var(--accent-2),var(--accent-1));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;color:#061022;font-size:22px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.6)
+    }
+    .meta{display:flex;flex-direction:column}
+    .meta .title{font-size:18px;font-weight:700;letter-spacing:0.2px}
+    .meta .sub{font-size:13px;color:rgba(230,238,248,0.7);margin-top:6px}
+    .tag{
+      margin-left:auto;padding:8px 12px;border-radius:999px;
+      background:linear-gradient(90deg,var(--accent-2),var(--accent-1));
+      color:#041028;font-weight:700;font-size:13px
+    }
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:20px;margin-top:20px}
+    .content{
+      padding:18px;border-radius:14px;
+      background:linear-gradient(180deg,var(--glass-2),transparent);
+      border:1px solid rgba(255,255,255,0.02)
+    }
+    .content h1{margin:0;font-size:28px}
+    .content p{margin:12px 0 0 0;color:rgba(230,238,248,0.95);line-height:1.5}
+    .points{margin-top:12px}
+    .points li{margin:8px 0}
+    .preview{
+      position:relative;border-radius:12px;padding:12px;
+      background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;flex-direction:column;gap:12px
+    }
+    .code-shot{
+      border-radius:8px;background:linear-gradient(180deg,#061328 0%, #041022 100%);
+      padding:14px;font-family:monospace;color:#d8f3ff;overflow:auto;
+      border:1px solid rgba(255,255,255,0.03);font-size:14px
+    }
+    .meta-kv{display:flex;gap:8px;font-size:13px}
+    .kv{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);font-weight:700}
+    .footer{display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px}
+    .hashtags{display:flex;gap:8px;flex-wrap:wrap}
+    .hash{padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.02);font-size:13px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.preview{order:-1}}
+    .grain-overlay{position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 120px 120px rgba(0,0,0,0.25)}
+  </style>
+</head>
+<body>
+  <div class="post-card">
+    <div class="ribbon"></div>
+    <div class="grain-overlay"></div>
+
+    <div class="top-row">
+      <div class="avatar">#30</div>
+      <div class="meta">
+        <div class="title">30-Day Python Coding Challenge</div>
+        <div class="sub">Day 09 • Aug 18, 2025 • Shashank</div>
+      </div>
+      <div class="tag">#Day09</div>
+    </div>
+
+    <div class="hero">
+      <div class="content">
+        <h1>Day 9 — Functions: BMI Calculator</h1>
+        <p>Today I explored Python functions by creating a BMI Calculator. It takes weight and height, calculates BMI, and classifies the result into health categories.</p>
+
+        <ul class="points">
+          <li>Learned to define and call custom functions</li>
+          <li>Used conditional statements for classification</li>
+          <li>Handled invalid user inputs</li>
+          <li>Practiced returning and rounding values</li>
+        </ul>
+
+        <p style="margin-top:12px">Repo link: <strong>https://github.com/VakakapudiShashank/-30-Days-.git</strong></p>
+      </div>
+
+      <div class="preview">
+        <div class="meta-kv">
+          <div class="kv">⏱ Daily: 30–60m</div>
+          <div class="kv">📂 Repo: Day09</div>
+        </div>
+
+        <div class="code-shot" style="max-height:260px;overflow:auto;">
+<pre># Day 9: Functions - BMI Calculator
+
+def calculate_bmi(weight, height):
+    bmi = weight / (height ** 2)
+    return round(bmi, 2)
+
+def classify_bmi(bmi):
+    if bmi < 18.5:
+        return "Underweight"
+    elif 18.5 <= bmi <= 24.9:
+        return "Normal weight"
+    elif 25 <= bmi <= 29.9:
+        return "Overweight"
+    else:
+        return "Obese"
+
+def main():
+    print("=== BMI Calculator ===")
+    try:
+        weight = float(input("Enter your weight in kg: "))
+        height = float(input("Enter your height in meters: "))
+        
+        if weight <= 0 or height <= 0:
+            print("❌ Weight and height must be positive numbers.")
+            return
+        
+        bmi = calculate_bmi(weight, height)
+        category = classify_bmi(bmi)
+        
+        print(f"Your BMI is: {bmi}")
+        print(f"Category: {category}")
+    except ValueError:
+        print("❌ Please enter valid numbers.")
+
+if __name__ == "__main__":
+    main()
+</pre>
+        </div>
+
+        <div class="code-shot" style="background:linear-gradient(180deg,#0a1a35 0%, #061328 100%);color:#b7f397;max-height:150px;overflow:auto;">
+<pre><strong>Sample Test Cases:</strong>
+
+Test 1:
+Weight: 50
+Height: 1.6
+Your BMI is: 19.53
+Category: Normal weight
+
+Test 2:
+Weight: 85
+Height: 1.75
+Your BMI is: 27.76
+Category: Overweight
+
+Test 3:
+Weight: 45
+Height: 1.7
+Your BMI is: 15.57
+Category: Underweight
+</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="hashtags">
+        <div class="hash">#Python</div>
+        <div class="hash">#30DayChallenge</div>
+        <div class="hash">#LearningInPublic</div>
+        <div class="hash">#Coding</div>
+        <div class="hash">#PythonBeginner</div>
+        <div class="hash">#NxtWave</div>
+      </div>
+      <div style="font-size:13px;color:rgba(230,238,248,0.75)">Commit: "Day09: Functions - BMI Calculator"</div>
+    </div>
+  </div>
+</body>
+</html>
