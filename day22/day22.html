@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cinematic LinkedIn Post Template — Day 22</title>
+  <style>
+    :root{
+      --bg1: #0f1724;
+      --accent-1: #ff6b8a;
+      --accent-2: #00d1ff;
+      --gold: #ffd166;
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.03);
+      --card-w: 1000px;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;padding:40px;display:flex;align-items:center;justify-content:center;
+      background: radial-gradient(1200px 600px at 10% 20%, rgba(0,206,255,0.07), transparent),
+                  radial-gradient(1000px 600px at 90% 80%, rgba(255,107,138,0.06), transparent),
+                  var(--bg1);
+      font-family:var(--font-sans);color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+    }
+    body::after{
+      content:"";position:fixed;inset:0;pointer-events:none;
+      background-image:linear-gradient(transparent 96%, rgba(0,0,0,0.02) 100%);
+      mix-blend-mode:overlay;opacity:0.7
+    }
+    .post-card{
+      width:min(92vw, var(--card-w));
+      border-radius:20px;padding:28px;position:relative;overflow:hidden;
+      background:linear-gradient(135deg,var(--glass), rgba(255,255,255,0.02));
+      box-shadow: 0 20px 60px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(8px) saturate(120%);
+    }
+    .ribbon{
+      position:absolute;inset:auto -20% -40% auto;width:160%;height:160%;
+      transform:rotate(-12deg);filter:blur(30px);opacity:0.85;
+      background: linear-gradient(90deg, rgba(0,209,255,0.14), rgba(255,107,138,0.12) 35%, rgba(255,209,102,0.08));
+      animation: drift 10s linear infinite;
+      mix-blend-mode:screen;
+    }
+    @keyframes drift{
+      0%{transform:translateX(-5%) rotate(-12deg)}
+      50%{transform:translateX(5%) rotate(-12deg)}
+      100%{transform:translateX(-5%) rotate(-12deg)}
+    }
+    .top-row{display:flex;align-items:center;gap:18px}
+    .avatar{
+      width:72px;height:72px;border-radius:14px;flex:0 0 72px;
+      background:linear-gradient(180deg,var(--accent-2),var(--accent-1));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;color:#061022;font-size:22px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.6)
+    }
+    .meta{display:flex;flex-direction:column}
+    .meta .title{font-size:18px;font-weight:700;letter-spacing:0.2px}
+    .meta .sub{font-size:13px;color:rgba(230,238,248,0.7);margin-top:6px}
+    .tag{
+      margin-left:auto;padding:8px 12px;border-radius:999px;
+      background:linear-gradient(90deg,var(--accent-2),var(--accent-1));
+      color:#041028;font-weight:700;font-size:13px
+    }
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:20px;margin-top:20px}
+    .content{
+      padding:18px;border-radius:14px;
+      background:linear-gradient(180deg,var(--glass-2),transparent);
+      border:1px solid rgba(255,255,255,0.02)
+    }
+    .content h1{margin:0;font-size:28px}
+    .content p{margin:12px 0 0 0;color:rgba(230,238,248,0.95);line-height:1.5}
+    .points{margin-top:12px}
+    .points li{margin:8px 0}
+    .preview{
+      position:relative;border-radius:12px;padding:12px;
+      background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;flex-direction:column;gap:12px
+    }
+    .code-shot{
+      border-radius:8px;background:linear-gradient(180deg,#061328 0%, #041022 100%);
+      padding:14px;font-family:monospace;color:#d8f3ff;overflow:auto;
+      border:1px solid rgba(255,255,255,0.03);font-size:14px
+    }
+    .meta-kv{display:flex;gap:8px;font-size:13px}
+    .kv{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);font-weight:700}
+    .footer{display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px}
+    .hashtags{display:flex;gap:8px;flex-wrap:wrap}
+    .hash{padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.02);font-size:13px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.preview{order:-1}}
+    .grain-overlay{position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 120px 120px rgba(0,0,0,0.25)}
+  </style>
+</head>
+<body>
+  <div class="post-card" role="img" aria-label="LinkedIn post image template">
+    <div class="ribbon" aria-hidden="true"></div>
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <div class="top-row">
+      <div class="avatar">#30</div>
+      <div class="meta">
+        <div class="title">30-Day Python Coding Challenge</div>
+        <div class="sub">Day 22 • Aug 31, 2025 • Shashank</div>
+      </div>
+      <div class="tag">#Day22</div>
+    </div>
+
+    <div class="hero">
+      <div class="content">
+        <h1>Day 22 — GitHub Profile Fetcher</h1>
+        <p>Today I explored Python’s <code>requests</code> library to interact with the GitHub API. I built a CLI app that fetches and displays profile details such as username, bio, repositories, followers, and more.</p>
+
+        <ul class="points">
+          <li>Learned to use <code>requests.get()</code> with timeout handling</li>
+          <li>Implemented error handling for 404 and API errors</li>
+          <li>Extracted structured JSON response from GitHub</li>
+          <li>Printed key profile details in a clean format</li>
+        </ul>
+
+        <p style="margin-top:12px">Repo link: <strong>https://github.com/VakakapudiShashank/-30-Days-.git</strong></p>
+      </div>
+
+      <div class="preview">
+        <div class="meta-kv">
+          <div class="kv">⏱ Daily: 30–60m</div>
+          <div class="kv">📂 Repo: Day22</div>
+        </div>
+
+        <div class="code-shot" style="max-height:260px;overflow:auto;">
+<pre># Day 22 — GitHub Profile Fetcher
+# pip install requests
+
+import requests
+
+def fetch_github_user(username: str):
+    url = f"https://api.github.com/users/{username}"
+    try:
+        r = requests.get(url, timeout=10)
+        if r.status_code == 404:
+            print("❌ User not found.")
+            return
+        r.raise_for_status()
+        data = r.json()
+        print("\n👤 GitHub Profile")
+        print(f"Name:           {data.get('name')}")
+        print(f"Username:       {data.get('login')}")
+        print(f"Bio:            {data.get('bio')}")
+        print(f"Public Repos:   {data.get('public_repos')}")
+        print(f"Followers:      {data.get('followers')}")
+        print(f"Following:      {data.get('following')}")
+        print(f"Location:       {data.get('location')}")
+        print(f"Created At:     {data.get('created_at')}")
+        print(f"Profile URL:    {data.get('html_url')}")
+    except Exception as e:
+        print(f"⚠ API error: {e}")
+
+if __name__ == "__main__":
+    username = input("Enter GitHub username: ").strip()
+    if username:
+        fetch_github_user(username)
+</pre>
+        </div>
+
+        <div class="code-shot" style="background:linear-gradient(180deg,#0a1a35 0%, #061328 100%);color:#b7f397;max-height:150px;overflow:auto;">
+<pre><strong>Sample Run:</strong>
+
+Enter GitHub username: torvalds
+
+👤 GitHub Profile
+Name:           Linus Torvalds
+Username:       torvalds
+Bio:            Linux creator
+Public Repos:   6
+Followers:      300k+
+Following:      0
+Location:       Portland, OR
+Created At:     2011-09-03T15:26:22Z
+Profile URL:    https://github.com/torvalds
+</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="hashtags">
+        <div class="hash">#Python</div>
+        <div class="hash">#30DayChallenge</div>
+        <div class="hash">#LearningInPublic</div>
+        <div class="hash">#APIs</div>
+        <div class="hash">#GitHub</div>
+        <div class="hash">#Coding</div>
+      </div>
+      <div style="font-size:13px;color:rgba(230,238,248,0.75)">Commit: "Day22: GitHub Profile Fetcher"</div>
+    </div>
+  </div>
+</body>
+</html>
